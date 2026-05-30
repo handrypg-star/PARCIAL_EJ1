@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscar Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>🔍 Buscar Producto</h1>
+
+    <form method="POST">
+
+        <input type="text"
+               name="codigo"
+               placeholder="Ingrese código">
+
+        <button type="submit">
+            Buscar
+        </button>
+
+    </form>
+
+    {% if producto %}
+
+    <div class="resultado">
+
+        <h3>Resultado Encontrado</h3>
+
+        <p><b>Código:</b> {{ producto[0] }}</p>
+        <p><b>Nombre:</b> {{ producto[1] }}</p>
+        <p><b>Precio:</b> S/. {{ producto[2] }}</p>
+        <p><b>Stock:</b> {{ producto[3] }}</p>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/principal">
+        <button>⬅ Regresar</button>
+    </a>
+
+</div>
+
+</body>
+</html>
